@@ -1,0 +1,49 @@
+.img:hover{
+    filter: blur(8px);
+}
+.img:hover + .t1{
+    display: block;
+    transition: 1s;
+}
+.t1:hover{
+    display: block;
+    transition: 0.5s;
+}
+.t1:hover + .img{
+    filter: blur(8px);
+}
+.img:hover + .t2{
+    display: block;
+    transition: 1s;
+}
+.t2:hover{
+    display: block;
+    transition: 0.5s;
+}
+.t2:hover + .img{
+    filter: blur(8px);
+}
+
+.img{
+
+  transition: 1s;
+}
+.t1{
+    position: absolute;
+    top: 110px;
+    left: 70px;
+    display: none;
+    
+}
+.t2{
+    position: absolute;
+    top: 110px;
+    left: 100px;
+    display: none;
+    
+}
+div > h2{
+    font-weight: bolder !important;
+    font-size: 50px;
+    cursor: pointer;
+}

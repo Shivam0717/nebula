@@ -1,0 +1,57 @@
+.sign{
+    height: 550px;
+    width: 400px;
+    /* background-color: red; */
+    background-color: rgba(0,0,0,0.4);
+   
+    margin-left: 550px;
+    margin-top: 20px;
+    border: solid 2px ;
+    animation: change 6s infinite;
+}
+@keyframes change{
+    0%{
+        border-color: blue;
+        box-shadow: 2px 2px 2px purple;
+    }
+    20%{
+        border-color: yellow;
+        box-shadow: 2px 2px 2px green;
+    }
+    40%{
+        border-color: green;
+        box-shadow: 2px 2px 2px yellow;
+    }
+    60%{
+        border-color: red;
+        box-shadow: 2px 2px 2px red;
+    }
+    80%{
+        border-color: purple;
+        box-shadow: 2px 2px 2px red;
+    }
+    100%{
+        border-color: grey;
+        box-shadow: 2px 2px 2px white;
+
+    }
+}
+
+.in{
+    height: 30px;
+    font-size: 12px;
+    /* width: 300px; */
+}
+.rr{
+    font-size: 15px;
+    color: grey;
+}
+.bt{
+    background-color: grey;
+    color: black;
+    transition: 0.5;
+}
+.bt:hover{
+    background-color: rgba(0, 255, 0, 0.638);
+    color: white;
+}

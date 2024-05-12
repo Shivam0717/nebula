@@ -1,0 +1,16 @@
+.contact{
+    background-color: rgb(177, 177, 172,0.3);
+}
+.tr{
+    /* background-color: rgb(177, 177, 172); */
+    height: 300px;
+    width: 650px;
+    border-left: solid black 3px;
+}
+.ee{
+    text-shadow: 2px 2px rgb(66, 65, 65);
+}
+.tt{
+    font-size: 21px;
+    text-shadow: 1px 1px rgb(152, 106, 8);
+}

@@ -1,0 +1,7 @@
+.btn1{
+    transition: transform 1s;
+}
+
+.btn1:hover{
+    transform : rotate(360deg);
+}

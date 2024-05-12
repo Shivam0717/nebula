@@ -1,0 +1,17 @@
+@font-face {
+    font-family: myFont3;
+    src: url(FROSTY_.TTF);
+}
+.ev3{
+font-family: myFont3;
+    font-size: 50px;
+    font-weight: bolder;
+    color: rgb(223, 173, 21);
+}
+.mid{
+    width: 800px;
+    height: 400px;
+    margin-left: 100px;
+    margin-top: 50px;
+    border: solid 0.5px orange;
+}

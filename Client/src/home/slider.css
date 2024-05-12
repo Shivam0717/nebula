@@ -1,0 +1,25 @@
+.r-buttons{
+    position: absolute;
+    top:170px;
+    right: 0;
+    z-index: 5;
+    
+}
+.bt2{
+    width:30px;
+    height:40px;
+    background-color:rgba(255,255,0,0.2);
+
+}
+.bt2:hover{
+  
+    background-color: rgba(255,255,0,0.8);
+}
+.card:hover{
+   
+   
+    box-shadow: 2px 2px 5px  lightblue;
+    transition: 1s;
+
+}
+/* style={{width: '15rem', height:"20rem", marginLeft:"25px"}} */

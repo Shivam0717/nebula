@@ -1,0 +1,11 @@
+.star1{
+    color: rgb(228, 222, 22);
+    font-size: 17px;
+    margin-right: 5px;
+}
+.star{
+    margin-top: 10px;
+}
+.pd:hover{
+    background-color: rgb(30, 30, 30);
+}

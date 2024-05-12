@@ -1,0 +1,25 @@
+@font-face {
+    font-family: myFont;
+    src: url(zombie_holocaust.ttf);
+    /* font-family: myFont2;
+    src: url(FROSTY_.TTF); */
+}
+.ev{
+    font-family: myFont;
+    font-size: 80px;
+    font-weight: bolder;
+}
+/* @font-face {
+    font-family: myFont2;
+    src: url(FROSTY_.TTF);
+}
+.ev2{
+    font-family: myFont2;
+    font-size: 80px;
+    font-weight: bolder;
+} */
+.ev2{
+    font-family: myFont2;
+    font-size: 80px;
+    font-weight: bolder;
+}
