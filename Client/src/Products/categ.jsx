@@ -21,7 +21,7 @@ function CATEG(){
         <>
          <section className="d-flex flex-row">
         <div className="ms-3 fixed-top " style={{height:"550px", width:"250px",  borderRight:"solid 2px grey",marginTop:"100px"}}>
-            <div className="ps-3 mt-3 me-3 pb-3 text-white border-bottom border-warning"><h4 className="fw-bolder">Filters</h4></div>
+            <div className="ps-3 mt-3 me-3 pb-3 text-white border-bottom border-info"><h4 className="fw-bolder">Filters</h4></div>
             <div className="pe-3 ps-2">
                 <p className="mt-4 ms-3 text-light fw-bold" style={{fontSize:"14px"}}>Price</p>
                 <div className="me-3 mt-2 ms-3">
@@ -123,7 +123,7 @@ function CATEG(){
             {pr.map((p)=>{
                 return(
                     <>
-                   <Link  to={`/products/${p.id}`} style={{textDecoration:"none"}}>   <div className="w-100 pd border-bottom border-top border-warning d-flex flex-row justify-content-between p-3 " style={{height:"200px"}}  onClick={(e)=>{e.persist();showitem(p)}}>
+                   <Link  to={`/products/${p.id}`} style={{textDecoration:"none"}}>   <div className="w-100 pd border-bottom border-top border-info d-flex flex-row justify-content-between p-3 " style={{height:"200px"}}  onClick={(e)=>{e.persist();showitem(p)}}>
             <img className="h-100 border border-dark rounded" src={p.thumbnail} alt="" style={{width:"200px"}}/>
             <div className=" w-75  pt-3 pb-0 ps-4 pe-3 mb-0">
                 <p className="text-white  fw-bold"style={{fontSize:"20px"}}>{p.title}</p>

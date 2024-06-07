@@ -6,12 +6,12 @@
 font-family: myFont3;
     font-size: 50px;
     font-weight: bolder;
-    color: rgb(223, 173, 21);
+    color: rgb(13, 202,240);
 }
 .mid{
     width: 800px;
     height: 400px;
     margin-left: 100px;
     margin-top: 50px;
-    border: solid 0.5px orange;
+    border: solid 0.5px rgb(13, 202,240);
 }

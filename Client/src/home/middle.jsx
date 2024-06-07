@@ -12,7 +12,7 @@ function MIDDLE(){
     return(
         <>
          <div className='d-flex flex-column justify-content-center align-items-center mt-1'>
-        <h1 className="text-warning ms-5 mt-5 fw-bold" data-aos="fade-up">CATEGORIES</h1>
+        <h1 className="text-info ms-5 mt-5 fw-bold " data-aos="fade-up">CATEGORIES</h1>
         <h4 className="text-light ms-5 mt-2 mb-0 " data-aos="fade-up"> Most Demaded Sections</h4>
         </div>
         <section className="ms-5 me-5 mt-0">

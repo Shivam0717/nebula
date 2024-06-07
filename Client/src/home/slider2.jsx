@@ -1,125 +1,104 @@
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
-import data from "../data.json"
-import "./slider.css"
 
-// Import Swiper styles
-import 'swiper/css';
-import { MODAL } from '../modal';
-import { useDispatch, useSelector } from 'react-redux';
-import { showproducts } from '../redux/action';
-import { Link, useNavigate } from 'react-router-dom';
-import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function SLIDER2(){
 
-  useEffect(() => {
-    AOS.init();
-  }, [])
+  const [count, setCount] = useState({
+    cust:0,
+    stores:0,
+    dealers:0
+  });
 
-  const item=useSelector((state)=>state.item.item)
-  console.log(item,"pp");
+  // useEffect(() => {                              //No, that code is not entirely correct. In the useEffect hook, when updating the state with setCount, you should use the functional update approach to ensure that you are updating the state based on the previous state correctly.
+  //   const interval = setInterval(() => {
+  //       setCount(({
+  //           ...count,
+  //           stores: count.stores < 100 ? count.stores + 1 : count.stores,
+  //           // cust: cust < 25 ? cust + 1 : cust,
+  //           // dealers: dealers < 200 ? dealers + 1 : dealers
+  //       }));
+  //   }, 50);
 
-  const dispatch=useDispatch()
 
-  const nav=useNavigate()
 
-  function showitem(a){
-    dispatch(showproducts(a,nav))
-  }
+//   In the above code snippet, you attempted to update the count state using setCount. However, there are a few issues:
 
-  const pr=useSelector((state)=>state.root.data[0])
-//   console.log(pr,"djkhjsd");
-  const neww=pr
-  // console.log(neww);
-  // console.log(neww[1].stock<50);
-  const sld = neww.filter((a)=>Number(a.stock)>55)
-  // console.log(sld);
+// Directly using the count state: You directly accessed the count state inside setInterval. In React, state updates are asynchronous. So, when you're updating the state inside setInterval, count might not be the most up-to-date state. This could lead to unexpected behavior because the count value may not be what you expect it to be.
+
+// Missing functional update: React provides a functional form of state update using setState or in this case, setCount. When the new state depends on the previous state, it's recommended to use this functional form. This ensures that you're always updating the state based on the latest state.
+
+// Here's why the functional update is important:
+
+// Let's say the count state changes between the time setInterval is set up and when it actually executes. In this case, your count inside setInterval will be outdated, potentially leading to unexpected behavior.
+
+// By using the functional update (prevCount => ...), React guarantees that you're always working with the latest state. This is crucial for cases where state updates are asynchronous or when multiple updates may occur in a short period.
+
+
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//         setCount(prevCount => ({
+//             ...prevCount,
+//             stores: prevCount.stores < 100 ? prevCount.stores + 1 : prevCount.stores,
+//             cust: prevCount.cust < 25 ? prevCount.cust + 1 : prevCount.cust,
+//             dealers: prevCount.dealers < 200 ? prevCount.dealers + 1 : prevCount.dealers
+//         }));
+//     }, 50);
+
+//     return () => clearInterval(interval);
+// }, []);
+
+
+
+////////for different increment time/////
+
+useEffect(() => {
+  const intervalStores = setInterval(() => {
+      setCount(prevCount => ({
+          ...prevCount,
+          stores: prevCount.stores < 100 ? prevCount.stores + 1 : prevCount.stores
+      }));
+  }, 100); // Increment stores every 50 milliseconds
+
+  const intervalCust = setInterval(() => {
+      setCount(prevCount => ({
+          ...prevCount,
+          cust: prevCount.cust < 70 ? prevCount.cust + 1 : prevCount.cust
+      }));
+  }, 150); // Increment cust every 100 milliseconds
+
+  const intervalDealers = setInterval(() => {
+      setCount(prevCount => ({
+          ...prevCount,
+          dealers: prevCount.dealers < 200 ? prevCount.dealers + 1 : prevCount.dealers
+      }));
+  }, 50); // Increment dealers every 200 milliseconds
+
+  return () => {
+      clearInterval(intervalStores);
+      clearInterval(intervalCust);
+      clearInterval(intervalDealers);
+  };
+}, []);
+
+   
+
     return(
         <>
-         <div className='d-flex flex-column justify-content-center  mt-1'>
-        <h1 className="text-warning ms-5 mt-5 fw-bold" data-aos="fade-up">OUR PRODUCTS</h1>
-        <h4 className="text-light ms-5 ps-2 mt-2 mb-2"data-aos="fade-up"> Released in Halloween</h4>
-        </div>
-        <section className="r-wrapper  mt-1 bg-black  pb-5" style={{overflow:"hidden" , width:"1470px",height:"400px"}}>
-    <Swiper
-    
-      spaceBetween={10}
-      slidesPerView={5}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
+        <div className='my-5 px-4' style={{width:"100%", height:"100px"}}>
 
-      data-aos="fade-up"
-    >
-         <SliderButtons />
-         {sld.map((a)=>{
-          return(
-            <>
-            <SwiperSlide>
-{/* data-bs-target="#exampleModalToggle" data-bs-toggle="modal" */}
-<Link to={`/products/${a.id}`} style={{textDecoration:"none"}}><div className="card pb-1  mt-5" style={{width: '15rem', height:"20rem", marginLeft:"25px"}}  onClick={(e)=>{e.persist(),showitem(a)}}> 
-<img src={a.thumbnail} className="card-img-top " alt="..." style={{height:"150px"}}/>
-<div className="card-body">
-<div className='d-flex flex-row justify-content-evenly w-25'><p className=" text-warning fw-bold">$ </p><p className='fw-bold' style={{fontSize:"14px"}}>{a.price}.00</p></div>
-<h5 className="card-title" style={{fontSize:"16px"}}>{a.title}</h5>
-<p className="card-text " style={{height:"60px", overflow:"hidden", fontSize:"12px", color:"grey"}}>{a.description}</p>
-
-</div>
-</div></Link>
-
-
-  </SwiperSlide>
-            </>
-          )
-         })
-        
-}
-        {/* <SwiperSlide>yo</SwiperSlide>
-        <SwiperSlide>yo</SwiperSlide>
-        <SwiperSlide>yo</SwiperSlide>
-        <SwiperSlide>yo</SwiperSlide>
-        <SwiperSlide>yo</SwiperSlide> */}
-
-
-      {/* <SwiperSlide style={{width:"1400"}}>
-      <div className='d-flex flex-row ' style={{width:"1400"}}>
-        {sld.map((p)=>{
-            return(
-                <>
-                
-               <div className="card " style={{width: '200px', height:"23rem"} }>
-  <img src={p.thumbnail} className="card-img-top" alt="..." style={{height:"200px"}}/>
-  <div className="card-body">
-    <h5 className="card-title fw-bold">{p.title}</h5>
-    <p className="card-text mb-0  text-body-secondary" style={{height:"70px", overflow:"hidden"}}>{p.description}</p>
-
-  </div>
-</div>
-
-
-                </>
-            )
-        })}
-      </div>
-      </SwiperSlide> */}
-      
-    </Swiper>
-    </section>
+         <div className=' h-100 w-100 d-flex justify-content-between' >
+          <div className='h-100' style={{width:"33%"}}><p className='fw-bold text-center text-info mb-0' style={{fontSize:"30px"}}>Customers</p><p className='fw-bold text-center text-white' style={{fontSize:"50px"}}>{count.cust}k+</p></div>
+          <div className='h-100' style={{width:"33%"}}><p className='fw-bold text-center text-info mb-0' style={{fontSize:"30px"}}>Stores</p><p className='fw-bold text-center text-white' style={{fontSize:"50px"}}>{count.stores}+</p></div>
+          <div className='h-100' style={{width:"33%"}}><p className='fw-bold text-center text-info mb-0' style={{fontSize:"30px"}}>Dealers</p><p className='fw-bold text-center text-white' style={{fontSize:"50px"}}>{count.dealers}+</p></div>
+         </div>
+         </div>
    
         </>
     )
 }
 export{SLIDER2}
 
-const SliderButtons = () => {
-  const swiper = useSwiper();
-  return (
-    <div className="d-flex flex-row justify-content-between  r-buttons" style={{width:"1470px"}}>
-      <button className='bt2'  onClick={() => swiper.slidePrev()}>&lt;</button>
-      <button className='bt2' onClick={() => swiper.slideNext()}>&gt;</button>
-    </div>
-  );
-};
+
 

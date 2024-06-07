@@ -48,7 +48,7 @@ function PRODUCTS(){
    
 
         <>
-        <h1 className="text-warning ms-5 mt-5 fw-bold" data-aos="fade-up">GET MORE PRODUCTS</h1>
+        <h1 className="text-info ms-5 mt-5 fw-bold" data-aos="fade-up">GET MORE PRODUCTS</h1>
         <h4 className="text-light ms-5 mt-2 mb-4 "  data-aos="fade-up"> Upgrade youself ....</h4>
 
         <section >

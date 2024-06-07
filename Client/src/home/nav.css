@@ -4,7 +4,7 @@
     width:30px !important
 }
 .icon:hover{
-    color: green !important;
+    color: rgb(13, 202,240) !important;
     transition: 0.5s;
 }
 .nav-item{
@@ -20,7 +20,7 @@
 
   .a1:hover{
     /* width:100%; */
-    color: yellow !important;
+    color: rgb(13, 202,240) !important;
     border-bottom: solid gyellow 2px;
 
   }
@@ -41,9 +41,9 @@
     cursor:none;
 } */
 .form-control:hover{
-    border: 2px solid green !important;
+    border: 2px solid rgb(13, 202,240) !important;
     width: 400px;
-    box-shadow: 1px 1px 2px  green;
+    box-shadow: 1px 1px 2px  rgb(13, 202,240);
 }
 /* .a1 + .drop{
     display: none;
@@ -57,7 +57,7 @@
 }
 
 .cat:hover{
-    color: yellow;
+    color: rgb(13, 202,240);
 }
 .col{
     margin-top: 10px;
@@ -110,8 +110,8 @@
     transition: 0.5s;
 }
 .ss>a:hover{
-    border-bottom: solid yellow 2px;
-    color: yellow;
+    border-bottom: solid rgb(13, 202,240), 2px;
+    color: rgb(13, 202,240);
 }
 Link{
     text-decoration: none;
@@ -132,7 +132,7 @@ Link{
     right: 12px;
     height:40px !important;
     width:40px;
-    background-color: green;
+    background-color: rgb(13, 202,240);
     border-radius: 50% 50% 50% 50% !important;
     /* display: none; */
 }
@@ -149,7 +149,7 @@ Link{
     transition: 0.5s;
 }
 .prf:hover{
-    background-color: green;
+    background-color: rgb(13, 202,240);
 }
 .dust{
     position: absolute;

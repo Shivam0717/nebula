@@ -344,7 +344,7 @@ function nav(){
           <a className="nav-link a1" id="prd" onClick={vis}>Products</a>
         </li>
         <div className="drop p-5 " style={{display:style}}>
-  <h3 className=" fw-bolder" style={{color:"yellow", marginLeft:"220px",textShadow:"2px 2px orange"}}>Category</h3>
+  <h3 className=" fw-bolder" style={{color:"rgb(13, 202,240)", marginLeft:"220px",textShadow:"2px 2px rgb(13, 202,240)"}}>Category</h3>
   
   <ul className="mt-4 ">
   <div class="container text-center">
@@ -385,7 +385,7 @@ function nav(){
       }} 
       
   />
-        <Link to={`/products/${search}`}><button className="btn  btn-outline-success  text-light pt-2 pb-0  "  onClick={give}><span class="material-symbols-outlined"  style={{ fontSize:"20px", height:"20px"}}>
+        <Link to={`/products/${search}`}><button className="btn  btn-outline-info  text-light pt-2 pb-0  "  onClick={give}><span class="material-symbols-outlined"  style={{ fontSize:"20px", height:"20px"}}>
 search
 </span></button></Link>
 
@@ -398,7 +398,7 @@ person
 </span></a>
 <div className="  ms-4 fw-bolder text-light prf" style={{height:"35px", width:"35px",borderRadius:"50% 50% 50% 50%",display:pr2,fontSize:"25px", paddingLeft:"10px",cursor:"pointer"}} onClick={vis3}>{acc.name?acc.name[0].toUpperCase():"w"}</div>
 <div className="drop2 ps=0 pt-3 mt-2" style={{display:style3,border:"solid white", height:"200px"}}>
-  <span className="iy ms-4 mb-3 text-warning "> Hi, {acc.name}</span>
+  <span className="iy ms-4 mb-3 text-info "> Hi, {acc.name}</span>
   <div className="ss pb-2"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" onClick={()=>{vis3,()=>{settotal(a)}}}><a  className="text-light">Wishlist</a></div>
    <div className="ss pb-3" ><a className="text-light">History</a></div>
    <Link to="/" style={{textDecoration:"none"}}><div className="ss" style={{borderTop:"solid grey 1px"}}><a href="" onClick={logout}>LOGOUT</a></div></Link>
@@ -424,7 +424,7 @@ person
     <div className="modal-dialog modal-dialog-centered">
       <div className="modal-content bg-black" style={{ height:"500px"}}>
         <div className="modal-header">
-          <h1 className="modal-title fs-5 text-warning fw-bolder" id="exampleModalToggleLabel">MY CART</h1>
+          <h1 className="modal-title fs-5 text-info fw-bolder" id="exampleModalToggleLabel">MY CART</h1>
           <button type="button" className="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close" style={{height:"10px", width:"10px"}}/>
         </div>
         <div className="modal-body ms-4 mt-3 d-flex flex-column" style={{overflow:"scroll"}}>
@@ -438,7 +438,7 @@ person
           <div className="mt-2">
           <span className="fw-bold ms-4 mt-3 text-light " style={{marginTop:"-40px", fontSize:"16px"}}>{p.title}</span>
           <br />
-          <span className="fw-bold ms-4  text-warning " style={{ fontSize:"16px", marginTop:"10px"}}>$ {p.price}.00</span>
+          <span className="fw-bold ms-4  text-info " style={{ fontSize:"16px", marginTop:"10px"}}>$ {p.price}.00</span>
           </div>
           </section>
           <span class="material-symbols-outlined dust2 mt-4 me-4 text-light" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" onClick={()=>{Dispatch(removecart(p)),tot()}} style={{fontSize:"30px"}}>
@@ -454,8 +454,8 @@ person
         
         </div>
         <div className="modal-footer">
-          <span className="text-light fw-bold " style={{marginRight:"30px"}}>TOTAL :<span className="ms-2 text-warning" style={{fontSize:"20px"}}> $ {total}</span> </span>
-          <button className="btn btn-success" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">BUY</button>
+          <span className="text-light fw-bold " style={{marginRight:"30px"}}>TOTAL :<span className="ms-2 text-info" style={{fontSize:"20px"}}> $ {total}</span> </span>
+          <button className="btn btn-info" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">BUY</button>
         </div>
       </div>
     </div>
@@ -483,7 +483,7 @@ person
   <span class="material-symbols-outlined text-danger  mt-4 me-0" style={{marginLeft:"50px", fontSize:"30px"}}>
 favorite
 </span>
-    <h3 className="offcanvas-title  fw-bold  mt-3 text-warning" id="offcanvasWithBothOptionsLabel" style={{borderBottom:"solid 2px yellow", marginLeft:"-30px"}}>My Wishlist</h3>
+    <h3 className="offcanvas-title  fw-bold  mt-3 text-info" id="offcanvasWithBothOptionsLabel" style={{borderBottom:"solid 2px yellow", marginLeft:"-30px"}}>My Wishlist</h3>
     <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" />
   </div>
   <div className="offcanvas-body">
@@ -496,7 +496,7 @@ favorite
             <div className="mt-1">
             <span className="text-white fw-bold ms-4 " style={{fontSize:"14px"}}>{a.title}</span>
             <br></br>
-            <span className="text-success fw-bold ms-4 " style={{fontSize:"14px"}}>$ {a.price}.00</span>
+            <span className="text-info fw-bold ms-4 " style={{fontSize:"14px"}}>$ {a.price}.00</span>
             </div>
             
             <span class="material-symbols-outlined mt-1 dust text-light"  style={{fontSize:"25px"}}>

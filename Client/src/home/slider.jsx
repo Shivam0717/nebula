@@ -1,6 +1,10 @@
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import "./slider.css"
 
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
+import 'swiper/css/autoplay';
+import 'swiper/css/scrollbar';
+
 // Import Swiper styles
 import 'swiper/css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -36,20 +40,27 @@ function SLIDER(){
   // console.log(sld);
     return(
         <>
-         <div className='d-flex flex-column justify-content-center  mt-4'>
-        <h1 className="text-warning ms-5 mt-5 fw-bold" >OUR PRODUCTS</h1>
+        <div  className="" style={{width:"100%", marginTop:"80px", paddingLeft:"250px", paddingRight:"250px"}}><hr className=' text-info bg-info' /></div>
+         <div className='d-flex flex-column justify-content-center align-items-center  mt-4'>
+        <h1 className="text-info ms-5 mt-5 fw-bold" >OUR PRODUCTS</h1>
         <h4 className="text-light ms-5 ps-2 mt-2 mb-2 " > Released in Halloween</h4>
         </div>
         <section className="r-wrapper  mt-1 bg-black  pb-5" style={{overflow:"hidden" , width:"1470px",height:"400px"}}>
     <Swiper
     
-      spaceBetween={5}
-      slidesPerView={5}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
+    modules={[ Pagination, Scrollbar,Navigation, Autoplay]}
+    spaceBetween={10}
+    slidesPerView={5}
+    autoplay={{ delay: 2000, disableOnInteraction: false }}
+    scrollbar={{ draggable: true }}
+    
+  
+    onSlideChange={() => console.log('slide change')}
+    onSwiper={(swiper) => console.log(swiper)}
+
       data-aos="fade-up"
     >
-         <SliderButtons />
+         
          {sld.map((a)=>{
           return(
             <>
@@ -109,13 +120,5 @@ function SLIDER(){
 }
 export{SLIDER}
 
-const SliderButtons = () => {
-  const swiper = useSwiper();
-  return (
-    <div className="d-flex flex-row justify-content-between  r-buttons" style={{width:"1470px"}}>
-      <button className='bt2'  onClick={() => swiper.slidePrev()}>&lt;</button>
-      <button className='bt2' onClick={() => swiper.slideNext()}>&gt;</button>
-    </div>
-  );
-};
+
 

@@ -1,25 +1,29 @@
-@font-face {
-    font-family: myFont;
-    src: url(zombie_holocaust.ttf);
-    /* font-family: myFont2;
-    src: url(FROSTY_.TTF); */
+.top-car{
+    width: 100%;
+    height: 650px;
+    background-image: url("https://media.istockphoto.com/id/1777876856/photo/digital-cart-icon-hologram-on-future-tech-background-online-shopping-evolution-futuristic.webp?b=1&s=170667a&w=0&k=20&c=5yltY4JJ1_3T__psr6xbT9QJ-ULwIYOkNTX49K7wPsQ=");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    color: white;
+    /* text-align: center; */
+    
+
 }
-.ev{
-    font-family: myFont;
-    font-size: 80px;
-    font-weight: bolder;
+.car{
+    animation: 1s slide-right;
 }
-/* @font-face {
-    font-family: myFont2;
-    src: url(FROSTY_.TTF);
-}
-.ev2{
-    font-family: myFont2;
-    font-size: 80px;
-    font-weight: bolder;
-} */
-.ev2{
-    font-family: myFont2;
-    font-size: 80px;
-    font-weight: bolder;
-}
+  
+  /***** Slide Right *****/
+  
+  @keyframes slide-right {
+    from {
+      margin-left: -100%;
+    }
+    to {
+      margin-left: 0%;
+    }
+  }

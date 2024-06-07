@@ -23,3 +23,10 @@
 
 }
 /* style={{width: '15rem', height:"20rem", marginLeft:"25px"}} */
+.swiper-pagination {
+    margin-top: 20px; /* Adjust this value to set the desired margin */
+}
+
+.swiper-pagination-bullet {
+    margin: 0 5px; /* Adjust this value to set the margin between bullets */
+}

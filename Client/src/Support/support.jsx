@@ -64,9 +64,9 @@ function SUPPORT() {
       </div>
       <div className="tr pt-5 ps-4">
         <div>
-        <h2 className=" ee text-center text-black">"We Are Here To </h2>
-        <h2 className=" ee text-center text-black mb-0">Support You"</h2>
-        <p className="tt  text-warning ms-1 mt-4 text-center" >Feel free to reach us...</p>
+        <h2 className=" ee text-center text-info">"We Are Here To </h2>
+        <h2 className=" ee text-center text-info mb-0">Support You"</h2>
+        <p className="tt  text-white ms-1 mt-4 text-center" >Feel free to reach us...</p>
         </div>
       </div>
       </section>

@@ -3,7 +3,7 @@ import "./footer.css"
 function FOOTER(){
     return(
         <>
-<footer className=" text-center mt-2 bg-warning  "style={{zIndex:"1"}} >
+<footer className=" text-center mt-2 bg-info "style={{zIndex:"1"}} >
   {/* Grid container */}
   <div className="container p-4 pb-0">
     {/* Section: Social media */}

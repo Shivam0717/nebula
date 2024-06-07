@@ -20,9 +20,10 @@ function HOME(){
         <>
          {loader?<><LOADING/></>:<>
         <CAROUSEL/>
+        <SLIDER2/>
         <SLIDER/>
         <MIDDLE/>
-        <SLIDER2/>
+        
         <PRODUCTS/>
         </>}
     
